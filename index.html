@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--Boxicons CDN Link-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>jual sepatu</title>
+</head>
+<body>
+    <div class="product-card">
+       <div class="logo-cart">
+           <img src="images/logo.png" alt="logo"> 
+           <i class='bx bxs-shopping-bag'></i>
+       </div> 
+       <div class="main-images">
+           <img id="grey" class="air jordan grey active " src="images/air jordan grey.png" alt="air jordan grey">
+           <img id="merah" class="air jordan merah " src="images/air jordan merah.png" alt="air jordan grey">
+           <img id="hitam" class="air jordan hitam " src="images/air jordan hitam.png" alt="air jordan grey">
+       </div>
+       <div class="shoe-details">
+           <span class="shoe_name">Air Jordan Nike</span>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis nisi ut quas similique, consectetur reprehenderit accusantium illo adipisci! Deserunt labore officiis consectetur numquam vitae ipsam dolore incidunt tempora. Distinctio, rem.</p>
+            <div class="star">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star' ></i>
+            </div>
+       </div>
+       <div class="color-price">
+           <div class="color-option">
+               <span class="color">Colour:</span>
+               <div class="circles">
+                   <span class="circle grey active" id="grey" ></span>
+                   <span class="circle merah" id="merah"  ></span>
+                   <span class="circle hitam"  id="hitam"></span>
+               </div>
+           </div>
+           <div class="price">
+               <span class="price_num">$09.00</span>
+               <span class="price_letter">Nine dollar only</span>
+ 
+           </div>
+       </div>
+       <div class="button">
+           <div class="button-layer"></div>
+           <button>Add To Cart</button>
+       </div>
+    </div> 
+
+    <script>
+        let circle = document.querySelector(".color-option");
+
+        circle.addEventListener("click", (e)=>{
+            let target = e.target;
+            if(target.classList.contains("circle")){
+                circle.querySelector(".active").classList.remove("active");
+                target.classList.add("active");
+                document.querySelector(".main-images .active").classList.remove("active");
+                document.querySelector(`.main-images .${target.id}`).classList.add("active");
+            }
+            
+        });
+    </script>
+    
+</body>
+</html>
